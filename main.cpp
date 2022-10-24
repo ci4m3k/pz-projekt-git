@@ -8,24 +8,26 @@ int main()
 
     cout << "Witaj w programie do obliczania miejsc zerowych funkcji liniowej!\n" << endl;
 
-    do 
-	{
-	    cout << "Podaj a = ";
-	    cin >> a;
-	    
-	    if (a == 0)
-	    {
-	    	cout << "Sproboj ponownie! Podaj a != 0" << endl << endl;
-		}
-    } while (a == 0);
+ 	cout << "Podaj a = ";
+	cin >> a;
 
-	
 	cout << "Podaj b = ";
 	cin >> b;
 
-    x = -b/a;
+    if (a==0 && b == 0)
+    {
+    	cout << "Funkcja posiada nieskonczenie wiele miejsc zerowych!" << endl;
+	}
+	else if (a == 0)
+	{
+		cout << "Funkcja nie posiada miejsc zerowych!" << endl;
+	}
+	else
+	{
+		x = -b/a;
 
-     cout << "\nMiejsce zerowe funkcji y = "<< a << "x" << "+ " << b << " wynosi x = " << x << endl;
+     	cout << "\nMiejsce zerowe funkcji y = "<< a << "x" << "+ " << b << " wynosi x = " << x << endl;
+	}
 
     return 0;
 }

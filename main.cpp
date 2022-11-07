@@ -33,20 +33,12 @@ void funkcja_liniowa()
 
 void funkcja_kwadratowa_ogolna()
 {
-    float a,b,c,x1,x2,delta;
+    float a,b,c,x,x1,x2,delta;
 
     cout << "Witaj w programie do obliczania miejsc zerowych funkcji kwadratowej!\n" << endl;
 
-    do
-    {
-        cout << "Podaj a = ";
-        cin >> a;
-
-        if (a == 0)
-	    {
-	    	cout << "Sproboj ponownie! Podaj a != 0" << endl << endl;
-		}
-    } while (a==0);
+    cout << "Podaj a = ";
+    cin >> a;
 
 	cout << "Podaj b = ";
 	cin >> b;
@@ -54,22 +46,42 @@ void funkcja_kwadratowa_ogolna()
 	cout << "Podaj c = ";
 	cin >> c;
 
-	delta = (b*b)-4*a*c;
+	if (a == 0)
+    {
+        if (b==0 && c == 0)
+        {
+            cout << "Funkcja posiada nieskonczenie wiele miejsc zerowych!" << endl;
+        }
+        else if (b == 0)
+        {
+            cout << "Funkcja nie posiada miejsc zerowych!" << endl;
+        }
+        else
+        {
+            x = -c/b;
 
-	if(delta < 0)
-    {
-        cout << "\nFunkcja nie posiada miejsc zerowych!";
-    }
-    else if (delta == 0)
-    {
-        x1 = -b/2*a;
-        cout << "\nFunkcja ma jedno miejsce zerowe x = " << x1;
+            cout << "\nMiejsce zerowe funkcji wynosi x = " << x << endl;
+        }
     }
     else
     {
-        x1 = (-b-sqrt(delta))/2*a;
-        x2 = (-b+sqrt(delta))/2*a;
-        cout << "\nFunkcja ma dwa miejsca zerowe x1 = " << x1 << ", x2 = " << x2;
+        delta = (b*b)-4*a*c;
+
+        if(delta < 0)
+        {
+            cout << "\nFunkcja nie posiada miejsc zerowych!";
+        }
+        else if (delta == 0)
+        {
+            x1 = -b/2*a;
+            cout << "\nFunkcja ma jedno miejsce zerowe x = " << x1;
+        }
+        else
+        {
+            x1 = (-b-sqrt(delta))/2*a;
+            x2 = (-b+sqrt(delta))/2*a;
+            cout << "\nFunkcja ma dwa miejsca zerowe x1 = " << x1 << ", x2 = " << x2;
+        }
     }
 }
 

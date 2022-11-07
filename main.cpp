@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <cstdlib>
 
 using namespace std;
 
@@ -27,7 +28,7 @@ void funkcja_liniowa()
 	{
 		x = -b/a;
 
-     	cout << "\nMiejsce zerowe funkcji y = "<< a << "x" << "+ " << b << " wynosi x = " << x << endl;
+     	cout << "\nMiejsce zerowe funkcji y="<< a << "x" << "+" << b << " wynosi x = " << x << endl;
 	}
 }
 
@@ -87,7 +88,31 @@ void funkcja_kwadratowa_ogolna()
 
 int main()
 {
-	funkcja_kwadratowa_ogolna();
+	int wybor=0;
+
+	while (wybor>2 || wybor<1)
+    {
+        cout << "MENU" << endl;
+        cout << "1.Funkcja liniowa" << endl;
+        cout << "2. Funkcja kwadratowa" << endl;
+
+        cout << "\nWybierz: ";
+        cin >> wybor;
+
+        system("cls");
+    }
+
+    switch(wybor)
+    {
+    case 1:
+        funkcja_liniowa();
+        break;
+    case 2:
+        funkcja_kwadratowa_ogolna();
+        break;
+    default:
+        break;
+    }
 
     return 0;
 }

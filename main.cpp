@@ -4,17 +4,9 @@
 
 using namespace std;
 
-void funkcja_liniowa()
+void funkcja_liniowa(double a, double b)
 {
-    float a,b,c,x;
-
-    cout << "Witaj w programie do obliczania miejsc zerowych funkcji liniowej!\n" << endl;
-
- 	cout << "Podaj a = ";
-	cin >> a;
-
-	cout << "Podaj b = ";
-	cin >> b;
+    double x;
 
     if (a==0 && b == 0)
     {
@@ -32,37 +24,13 @@ void funkcja_liniowa()
 	}
 }
 
-void funkcja_kwadratowa()
+void funkcja_kwadratowa(double a, double b, double c)
 {
-    float a,b,c,x,x1,x2,delta;
-
-    cout << "Witaj w programie do obliczania miejsc zerowych funkcji kwadratowej!\n" << endl;
-
-    cout << "Podaj a = ";
-    cin >> a;
-
-	cout << "Podaj b = ";
-	cin >> b;
-
-	cout << "Podaj c = ";
-	cin >> c;
+    double x1,x2,delta;
 
 	if (a == 0)
     {
-        if (b==0 && c == 0)
-        {
-            cout << "Funkcja posiada nieskonczenie wiele miejsc zerowych!" << endl;
-        }
-        else if (b == 0)
-        {
-            cout << "Funkcja nie posiada miejsc zerowych!" << endl;
-        }
-        else
-        {
-            x = -c/b;
-
-            cout << "\nMiejsce zerowe funkcji wynosi x = " << x << endl;
-        }
+        funkcja_liniowa(b,c);
     }
     else
     {
@@ -86,21 +54,9 @@ void funkcja_kwadratowa()
     }
 }
 
-void funkcja_kwadratowa_kanoniczna()
+void funkcja_kwadratowa_kanoniczna(double a, double p, double q)
 {
-    float a,p,q,x1,x2,delta;
-
-    cout << "Witaj w programie do obliczania miejsc zerowych funkcji kwadratowej!\n" << endl;
-
-    cout << "Podaj a = ";
-    cin >> a;
-
-	cout << "Podaj p = ";
-	cin >> p;
-
-	cout << "Podaj q = ";
-	cin >> q;
-
+    double x1,x2,delta;
 	delta = -q/4*a;
 
     if(delta < 0)
@@ -123,6 +79,7 @@ void funkcja_kwadratowa_kanoniczna()
 int main()
 {
 	int wybor=0;
+	double a,b,c,p,q;
 
 	while (wybor>3 || wybor<1)
     {
@@ -140,13 +97,43 @@ int main()
     switch(wybor)
     {
     case 1:
-        funkcja_liniowa();
+        cout << "Witaj w programie do obliczania miejsc zerowych funkcji liniowej!\n" << endl;
+
+        cout << "Podaj a = ";
+        cin >> a;
+
+        cout << "Podaj b = ";
+        cin >> b;
+
+        funkcja_liniowa(a,b);
         break;
     case 2:
-        funkcja_kwadratowa();
+        cout << "Witaj w programie do obliczania miejsc zerowych funkcji kwadratowej!\n" << endl;
+
+        cout << "Podaj a = ";
+        cin >> a;
+
+        cout << "Podaj b = ";
+        cin >> b;
+
+        cout << "Podaj c = ";
+        cin >> c;
+
+        funkcja_kwadratowa(a,b,c);
         break;
     case 3:
-        funkcja_kwadratowa_kanoniczna();
+         cout << "Witaj w programie do obliczania miejsc zerowych funkcji kwadratowej (w postaci kanonicznej)!\n" << endl;
+
+        cout << "Podaj a = ";
+        cin >> a;
+
+        cout << "Podaj p = ";
+        cin >> p;
+
+        cout << "Podaj q = ";
+        cin >> q;
+
+        funkcja_kwadratowa_kanoniczna(a,p,q);
         break;
     default:
         break;

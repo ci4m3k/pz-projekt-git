@@ -32,7 +32,7 @@ void funkcja_liniowa()
 	}
 }
 
-void funkcja_kwadratowa_ogolna()
+void funkcja_kwadratowa()
 {
     float a,b,c,x,x1,x2,delta;
 
@@ -93,7 +93,7 @@ int main()
 	while (wybor>2 || wybor<1)
     {
         cout << "MENU" << endl;
-        cout << "1.Funkcja liniowa" << endl;
+        cout << "1. Funkcja liniowa" << endl;
         cout << "2. Funkcja kwadratowa" << endl;
 
         cout << "\nWybierz: ";
@@ -108,7 +108,7 @@ int main()
         funkcja_liniowa();
         break;
     case 2:
-        funkcja_kwadratowa_ogolna();
+        funkcja_kwadratowa();
         break;
     default:
         break;
